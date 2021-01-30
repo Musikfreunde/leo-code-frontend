@@ -1,5 +1,5 @@
 # LeoCode Frontend with Angular
-##Short Description
+## Short Description
 This is a HTL Leonding Project.
 
 ## External Links:
