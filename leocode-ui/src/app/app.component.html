@@ -1,0 +1,9 @@
+<button *ngIf="!isDisplay" (click)="toggleDisplay()" mat-raised-button type="back"> Back to hub</button>
+
+<div *ngIf="isDisplay" class="container">
+      <button mat-raised-button > <mat-icon>person</mat-icon> Student Hub </button>
+      <button (click)="toggleDisplay()" mat-raised-button> <mat-icon>person</mat-icon> Teacher Hub </button>
+</div>
+<app-create *ngIf="!isDisplay" ></app-create>
+
+

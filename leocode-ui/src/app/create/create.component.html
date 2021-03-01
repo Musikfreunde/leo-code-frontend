@@ -1,0 +1,67 @@
+
+<div class="example-container">
+  <div class="form-container">
+    <h1>Upload a new Example: </h1>
+    <form [formGroup]="createForm" (submit)="submit()">
+      <mat-form-field [hideRequiredMarker]="true" class="form-field" appearance="outline">
+        <mat-label> Username
+        </mat-label>
+        <input matInput formControlName="Username" required>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Examplename
+        </mat-label>
+        <input matInput formControlName="Examplename" >
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Exampletype
+        </mat-label>
+        <input matInput formControlName="Exampletype" >
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline" >
+        <mat-label> Description
+        </mat-label>
+        <input matInput formControlName="Description">
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline" >
+        <mat-label> Choose a Instruction
+        </mat-label>
+        <ngx-mat-file-input accept=".md" formControlName="Instruction">
+          <mat-icon ngxMatFileInputIcon>text_snippet</mat-icon>
+        </ngx-mat-file-input >
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline" >
+        <mat-label> Choose a Pom
+        </mat-label>
+        <ngx-mat-file-input accept=".xml" formControlName="Pom">
+          <mat-icon ngxMatFileInputIcon>text_snippet</mat-icon>
+        </ngx-mat-file-input >
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline" >
+        <mat-label> Choose Tests
+        </mat-label>
+        <ngx-mat-file-input accept=".java" [multiple]="true" formControlName="Tests">
+          <mat-icon ngxMatFileInputIcon>text_snippet</mat-icon>
+        </ngx-mat-file-input >
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline" >
+        <mat-label> Choose Solutions
+        </mat-label>
+        <ngx-mat-file-input accept=".java" [multiple]="true" formControlName="Solutions">
+          <mat-icon ngxMatFileInputIcon>text_snippet</mat-icon>
+        </ngx-mat-file-input >
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline" >
+        <mat-label> Choose a Jenkinsfile
+        </mat-label>
+        <ngx-mat-file-input formControlName="Jenkinsfile">
+          <mat-icon ngxMatFileInputIcon>text_snippet</mat-icon>
+        </ngx-mat-file-input >
+
+      </mat-form-field>
+
+      <button mat-raised-button>Submit</button>
+      <h2 *ngIf="!isDisplay">Successfully submited! </h2>
+    </form>
+  </div>
+</div>
