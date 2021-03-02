@@ -1,0 +1,37 @@
+<!--<button *ngIf="!isDisplay" (click)="toggleDisplay()" mat-raised-button type="back"> Back to hub</button>-->
+<mat-toolbar>
+  <button mat-icon-button class="example-icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>
+    LEOCODE
+  </span>
+
+  <span style="float:right;display: inline;margin-left: 1500px">
+    Logged in as Teacher
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened #nav>
+    <mat-nav-list>
+      <mat-list-item>
+        Upload Example
+      </mat-list-item>
+      <mat-list-item>
+        Examples
+      </mat-list-item>
+      <mat-list-item>
+        Student Reviews
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-create *ngIf="isDisplay" ></app-create>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+

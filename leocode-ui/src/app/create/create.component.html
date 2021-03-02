@@ -1,0 +1,37 @@
+
+
+
+
+<div class="example-container">
+  <div class="form-container">
+    <h1>Upload a new Example: </h1>
+    <form [formGroup]="createForm" (submit)="submit()">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Examplename
+        </mat-label>
+        <input matInput formControlName="Examplename" >
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Exampletype
+        </mat-label>
+        <input matInput formControlName="Exampletype" >
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline" >
+        <mat-label> Description
+        </mat-label>
+        <input matInput formControlName="Description">
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline" >
+        <mat-label>.zip File
+        </mat-label>
+        <ngx-mat-file-input accept=".zip,.rar" formControlName="ZipFile">
+          <mat-icon ngxMatFileInputIcon>text_snippet</mat-icon>
+        </ngx-mat-file-input >
+      </mat-form-field>
+
+
+      <button mat-raised-button>Submit</button>
+      <h2 *ngIf="!isDisplay">Successfully submited! </h2>
+    </form>
+  </div>
+</div>

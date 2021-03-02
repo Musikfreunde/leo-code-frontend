@@ -1,0 +1,27 @@
+.example-container{
+  margin-left: 150px;
+  margin-top: 50px;
+  left: 100px;
+}
+.form-container{
+  width: 400px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+.form-field{
+  display: block
+}
+
+.hidden {
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+h2{
+  color: green;
+  font-size: medium;
+}
+
