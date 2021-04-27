@@ -16,15 +16,26 @@
 <mat-sidenav-container>
   <mat-sidenav mode="side" opened #nav>
     <mat-nav-list>
-      <mat-list-item>
+      <mat-list-item (click)="onMenuSelected('ex')">
         Exercises
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item (click)="onMenuSelected('rep')">
         Reports
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
+
   <mat-sidenav-content>
-    <app-report *ngIf="isDisplay"></app-report>
+    <span [ngSwitch]="selected">
+      <div *ngSwitchCase="'ex'">
+        <app-exercise></app-exercise>
+      </div>
+      <div *ngSwitchCase="'rep'">
+        <app-report></app-report>
+      </div>
+    </span>
+
+
   </mat-sidenav-content>
+
 </mat-sidenav-container>

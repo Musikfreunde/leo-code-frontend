@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentPageComponent implements OnInit {
   isDisplay = true;
+  selected = 'rep';
 
   toggleDisplay(): void {
     this.isDisplay = !this.isDisplay;
@@ -17,4 +18,7 @@ export class StudentPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onMenuSelected(ex: string): void{
+    this.selected = ex;
+  }
 }
