@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  justify-content: space-between;
+}
+
+mat-sidenav-container{
+  height: 80%;
+  background-color: white;
+}
+
+span{
+  margin-left: 25px;
+}

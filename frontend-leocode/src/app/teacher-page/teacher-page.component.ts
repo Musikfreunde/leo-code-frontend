@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeacherPageComponent implements OnInit {
 
+  isDisplay = true;
+
+  toggleDisplay(): void {
+    this.isDisplay = !this.isDisplay;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
