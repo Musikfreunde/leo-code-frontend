@@ -1,27 +1,28 @@
-# MyFirstApp
+# LeoCode Doc 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+## Anmerkung 
 
-## Development server
+*Github Pages:*
+[Index](https://htl-leonding-project.github.io/leo-code)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Projektbeschreibung
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+LeoCode ist eine Webanwendung die für Schüler der HTL Leonding entwickelt wird, um das Coding zu üben.
 
-## Build
+## Team
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Benjamin Besic
+* David Ignjatovic
+* Yimne Raid
+* Bozidar Spasenovic
 
-## Running unit tests
+## GH-pages commands
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. ```.\part1.sh```
 
-## Running end-to-end tests
+2. ``docker run --rm -v ${PWD}/docs:/documents asciidoctor/docker-asciidoctor /bin/bash -c "asciidoctor -r asciidoctor-diagram -a icons=font -a experimental=true -a source-highlighter=rouge -a rouge-theme=github -a rouge-linenums-mode=inline -a docinfo=shared -a imagesdir=images -a toc=left -a toclevels=2 -a sectanchors=true -a sectnums=true -a favicon=themes/favicon.png -a sourcedir=src/main/java -b html5 '*.adoc' && rm -rf ./.asciidoctor && echo Done"``
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+3. ```.\part2.sh```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. ``.\finisher.sh``
