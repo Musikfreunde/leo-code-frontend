@@ -1,1 +1,9 @@
-<p>exercise works!</p>
+<div>
+  <mat-selection-list #exercises [multiple]="false">
+    <mat-list-option *ngFor="let name of nameList" [value]="name">
+      {{name}}
+    </mat-list-option>
+
+  </mat-selection-list>
+
+</div>
