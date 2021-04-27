@@ -11,16 +11,10 @@ export class ExerciseComponent implements OnInit {
     new Exercise('Example 02: Java Calculator', 'Boki', 'Calculator'),
     new Exercise('Example 03: Java CoffeeSlotMachine', 'David', 'CoffeeSlotMachine')
   ];
-  nameList: string[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.nameList = this.exercisesList.map(e => e.name);
-  }
-
-  findExercise(name: string): Exercise{
-    return this.exercisesList.find(e => e.name === name) as Exercise;
   }
 }
 export class Exercise{
