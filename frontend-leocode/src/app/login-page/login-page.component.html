@@ -34,8 +34,9 @@
         </tr></table>
     </form>
     <div>
-      <button mat-raised-button class="login" color="primary" >Login</button>
+      <button mat-raised-button class="login" color="primary" [routerLink]="'/student'">Login Student</button>
       <button mat-raised-button class="guest" [routerLink]="'/guest'">Login as Guest</button>
+      <button mat-raised-button class="login" color="primary" [routerLink]="'/teacher'" >Login Teacher</button>
     </div>
 
   </mat-card-content>
