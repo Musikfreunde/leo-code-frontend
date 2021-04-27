@@ -17,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReportComponent } from './student-page/report/report.component';
+import { ExerciseComponent } from './student-page/exercise/exercise.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReportComponent } from './student-page/report/report.component';
     StudentPageComponent,
     GuestPageComponent,
     UploadComponent,
-    ReportComponent
+    ReportComponent,
+    ExerciseComponent
   ],
   imports: [
     BrowserModule,
