@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-page.component.scss']
 })
 export class StudentPageComponent implements OnInit {
+  isDisplay = true;
+
+  toggleDisplay(): void {
+    this.isDisplay = !this.isDisplay;
+  }
 
   constructor() { }
 

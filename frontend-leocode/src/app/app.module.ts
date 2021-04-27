@@ -16,6 +16,7 @@ import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReportComponent } from './student-page/report/report.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     TeacherPageComponent,
     StudentPageComponent,
     GuestPageComponent,
-    UploadComponent
+    UploadComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

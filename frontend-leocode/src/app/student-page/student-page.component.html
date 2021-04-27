@@ -1,1 +1,29 @@
-<p>student-page works!</p>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" (click)="nav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>
+    LEOCODE
+  </span>
+
+  <span style="float:right;display: inline;margin-left: 1500px">
+    Logged in as Student
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened #nav>
+    <mat-nav-list>
+      <mat-list-item>
+        Exercises
+      </mat-list-item>
+      <mat-list-item>
+        Reports
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-report *ngIf="isDisplay"></app-report>
+  </mat-sidenav-content>
+</mat-sidenav-container>
