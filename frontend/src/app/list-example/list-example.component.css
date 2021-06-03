@@ -11,7 +11,7 @@ tr:hover {
 }
 
 div.newView{
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .mat-selection-list{
@@ -27,4 +27,8 @@ div.newView{
   margin-right: 26%;
   margin-top: 1%;
   width: 500px;
+}
+
+.mat-card:hover{
+  background-color: lightgrey;
 }

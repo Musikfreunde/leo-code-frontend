@@ -40,7 +40,7 @@
     </mat-list-option>
   </mat-selection-list>
 
-  <mat-card *ngIf="!exercises.selectedOptions.isEmpty()" class="mat-elevation-z8">
+  <mat-card [routerLink]="['/example', exercises.selectedOptions.selected[0]?.value.id]" *ngIf="!exercises.selectedOptions.isEmpty()" class="mat-elevation-z8">
     <mat-card-header>
       <mat-icon mat-card-avatar>assignment</mat-icon>
       <mat-card-title>{{exercises.selectedOptions.selected[0]?.value.name}}</mat-card-title>
@@ -50,8 +50,5 @@
     <mat-card-content>
       Description: {{exercises.selectedOptions.selected[0]?.value.description}}
     </mat-card-content>
-    <mat-card-actions>
-      <button [routerLink]="['/example', exercises.selectedOptions.selected[0]?.value.id]" mat-raised-button>Detail View</button>
-    </mat-card-actions>
   </mat-card>
 </div>

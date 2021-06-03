@@ -18,4 +18,8 @@ export class TeacherPageComponent{
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  reloadPage(): void{
+    window.location.reload();
+  }
+
 }

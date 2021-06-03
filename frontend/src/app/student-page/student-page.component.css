@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 150px;
+  width: 200px;
 }
 
 .sidenav .mat-toolbar {
@@ -18,4 +18,9 @@
 
 span.spacer{
   padding-left: 500px;
+}
+
+button.logout{
+  margin-left: 60px;
+  margin-top: 20px;
 }
