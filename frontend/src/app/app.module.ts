@@ -42,9 +42,9 @@ const appRoutes: Routes = [
   {path: 'example/:id', component: DetailExampleComponent},
   {path: 'test-example/:id', component: TestExampleComponent},
   {path: 'submission-status/:id', component: SubmissionStatusComponent},
+  {path: 'report', component: ReportComponent},
   {path: '',  redirectTo: '', pathMatch: 'full' },
-  {path: '**', component: FileNotFoundComponent},
-  {path: 'report', component: ReportComponent}
+  {path: '**', component: FileNotFoundComponent}
 ];
 
 @NgModule({
