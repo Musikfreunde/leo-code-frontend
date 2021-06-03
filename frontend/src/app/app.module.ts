@@ -31,6 +31,8 @@ import { SubmissionStatusComponent } from './submission-status/submission-status
 import { LoginPageComponent } from './login-page/login-page.component';
 import { StudentPageComponent } from './student-page/student-page.component';
 import { TeacherPageComponent } from './teacher-page/teacher-page.component';
+import { ReportComponent } from './student-page/report/report.component';
+import {MatSelectionList} from '@angular/material/list';
 
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
   {path: 'submission-status/:id', component: SubmissionStatusComponent},
   {path: '',  redirectTo: '', pathMatch: 'full' },
   {path: '**', component: FileNotFoundComponent},
+  {path: 'report', component: ReportComponent}
 ];
 
 @NgModule({
@@ -56,7 +59,8 @@ const appRoutes: Routes = [
     SubmissionStatusComponent,
     LoginPageComponent,
     StudentPageComponent,
-    TeacherPageComponent
+    TeacherPageComponent,
+    ReportComponent
   ],
     imports: [
         BrowserModule,
