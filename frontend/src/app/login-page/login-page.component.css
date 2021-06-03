@@ -20,7 +20,6 @@ mat-icon{
 
 button.login{
   margin-left: 50px;
-  margin-bottom: 5px;
 }
 
 button.guest{
@@ -29,7 +28,7 @@ button.guest{
 
 mat-card{
   width: 400px;
-  height: 320px;
+  height: 270px;
   margin: auto;
   margin-top: 10%;
 }
