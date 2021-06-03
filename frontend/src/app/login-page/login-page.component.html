@@ -35,7 +35,7 @@
     </form>
     <div>
       <button mat-raised-button class="login" color="primary" [routerLink]="'/list-example/0'" (click)="isStudent = !isStudent">Login Student</button>
-      <button mat-raised-button class="guest" [routerLink]="'/list-example'" (click)="isGuest = !isGuest">Login as Guest</button>
+      <button mat-raised-button class="guest" [disabled]="true" [routerLink]="'/list-example'" (click)="isGuest = !isGuest">Login as Guest</button>
       <button mat-raised-button class="login" color="primary" [routerLink]="'/list-example/1'" (click)="isTeacher = !isTeacher" >Login Teacher</button>
     </div>
 

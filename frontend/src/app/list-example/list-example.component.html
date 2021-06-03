@@ -32,3 +32,26 @@
   <button *ngIf="value == 1" mat-raised-button color="primary" style="margin: 10px 10px 10px 10px"
           (click)="this.router.navigate(['/create-example'])" >Create Example</button>
 </div>
+
+<div class="newView">
+  <mat-selection-list #exercises [multiple]="false" class="mat-elevation-z8">
+    <mat-list-option *ngFor="let exercise of dataSource.data" [value]="exercise">
+      {{exercise.name}}
+    </mat-list-option>
+  </mat-selection-list>
+
+  <mat-card *ngIf="!exercises.selectedOptions.isEmpty()" class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>assignment</mat-icon>
+      <mat-card-title>{{exercises.selectedOptions.selected[0]?.value.name}}</mat-card-title>
+      <mat-card-subtitle>
+        Type: {{exercises.selectedOptions.selected[0]?.value.type}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      Description: {{exercises.selectedOptions.selected[0]?.value.description}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button [routerLink]="['/example', exercises.selectedOptions.selected[0]?.value.id]" mat-raised-button>Detail View</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
