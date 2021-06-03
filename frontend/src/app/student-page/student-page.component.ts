@@ -18,4 +18,7 @@ export class StudentPageComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  reloadPage(): void{
+    window.location.reload();
+  }
 }
