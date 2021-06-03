@@ -1,0 +1,49 @@
+<mat-toolbar *ngIf="!isGuest && !isStudent && !isTeacher">
+  <button mat-icon-button class="example-icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>
+    LEOCODE
+  </span>
+</mat-toolbar>
+
+<mat-card *ngIf="!isGuest && !isStudent && !isTeacher" class="example-card">
+  <mat-card-header>
+    <mat-card-title><mat-icon style="margin-right: 10px;float: left">code</mat-icon> Leocode Login </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+
+            <mat-form-field appearance="legacy" class="example-full-width">
+              <input matInput placeholder="Username"  name="username" required>
+              <mat-icon matSuffix>account_box</mat-icon>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+
+            <mat-form-field appearance="legacy" class="example-full-width">
+              <input matInput placeholder="Password" type="password" name="password" required>
+              <mat-icon matSuffix>vpn_key</mat-icon>
+            </mat-form-field></td>
+        </tr></table>
+    </form>
+    <div>
+      <button mat-raised-button class="login" color="primary" [routerLink]="'/list-example/0'" (click)="isStudent = !isStudent">Login Student</button>
+      <button mat-raised-button class="guest" [routerLink]="'/list-example'" (click)="isGuest = !isGuest">Login as Guest</button>
+      <button mat-raised-button class="login" color="primary" [routerLink]="'/list-example/1'" (click)="isTeacher = !isTeacher" >Login Teacher</button>
+    </div>
+
+  </mat-card-content>
+
+</mat-card>
+
+<app-menu *ngIf="isGuest"></app-menu>
+
+<app-student-page *ngIf="isStudent" ></app-student-page>
+<app-teacher-page *ngIf="isTeacher"></app-teacher-page>
