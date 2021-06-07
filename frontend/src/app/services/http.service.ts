@@ -9,7 +9,7 @@ import {Submission} from '../model/submission.model';
 })
 export class HttpService {
 
-  BASE_URL = 'http://localhost:9090/';
+  BASE_URL = 'http://vm147.htl-leonding.ac.at/';
 
   constructor(private http: HttpClient,
               private _zone: NgZone) { }
