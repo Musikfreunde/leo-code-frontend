@@ -33,6 +33,8 @@ import { StudentPageComponent } from './student-page/student-page.component';
 import { TeacherPageComponent } from './teacher-page/teacher-page.component';
 import { ReportComponent } from './student-page/report/report.component';
 import {MatSelectionList} from '@angular/material/list';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
@@ -82,7 +84,13 @@ const appRoutes: Routes = [
         MatRadioModule,
         MatCardModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: environment.production,
+          // Register the ServiceWorker as soon as the app is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
   providers: [],
   bootstrap: [AppComponent]
