@@ -1,5 +1,8 @@
 # LeoCode
 
+## publish-frontend.sh
+Makes angular production build, builds docker image and publishes it to zbenii/leofrontend on dockerhub 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
 ## Development server
