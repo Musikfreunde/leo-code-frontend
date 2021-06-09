@@ -62,8 +62,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "LeoCode:build",
-            "proxyConfig": "proxy.conf.json"
+            "browserTarget": "LeoCode:build"
           },
           "configurations": {
             "production": {

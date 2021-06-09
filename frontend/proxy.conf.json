@@ -1,7 +1,0 @@
-{
-  "/": {
-    "target": "http://vm147.htl-leonding.ac.at",
-    "secure": false,
-    "changeOrigin": true
-  }
-}
