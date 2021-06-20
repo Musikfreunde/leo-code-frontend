@@ -15,6 +15,8 @@ export class AuthenticationService {
 
   logOut(): void {
     this.oAuthService.logOut();
+    this.username.unsubscribe();
+    this.roles.unsubscribe();
   }
 
   async initializeLogin(): Promise<void> {
@@ -25,7 +27,8 @@ export class AuthenticationService {
       responseType: 'code',
       scope: 'offline_access',
       showDebugInformation: true,
-      requireHttps: false
+      requireHttps: false,
+      logoutUrl: window.location.origin
     });
     await this.oAuthService.loadDiscoveryDocumentAndTryLogin({
       customHashFragment: window.location.search

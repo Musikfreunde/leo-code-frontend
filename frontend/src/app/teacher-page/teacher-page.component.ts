@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 import {map, shareReplay} from "rxjs/operators";
+import {AuthenticationService} from "../authentification/authentication.service";
 
 @Component({
   selector: 'app-teacher-page',
@@ -10,16 +11,20 @@ import {map, shareReplay} from "rxjs/operators";
 })
 export class TeacherPageComponent{
 
+  teacherName: string = '';
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private authService: AuthenticationService) {
+    this.teacherName = this.authService.username.getValue();
+  }
 
   reloadPage(): void{
-    window.location.reload();
+    this.authService.logOut();
   }
 
 }

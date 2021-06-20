@@ -17,7 +17,7 @@
 }
 
 span.spacer{
-  padding-left: 500px;
+  float: right;
 }
 
 button.logout{
