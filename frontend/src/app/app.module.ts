@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -35,6 +35,8 @@ import { ReportComponent } from './student-page/report/report.component';
 import {MatSelectionList} from '@angular/material/list';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {AuthenticationService} from './authentification/authentication.service';
+import {ConfigService} from './services/config.service';
 
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
@@ -92,7 +94,15 @@ const appRoutes: Routes = [
           registrationStrategy: 'registerWhenStable:30000'
         })
     ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (auth: AuthenticationService, config: ConfigService) => () =>
+        config.init().then(() => auth.initializeLogin()),
+      deps: [AuthenticationService, ConfigService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
