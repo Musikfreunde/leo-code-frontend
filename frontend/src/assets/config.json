@@ -1,4 +1,4 @@
 {
   "backendApiUrl": "http://loicalhost:9090",
-  "keycloakUrl": "http://identity-provider:8080/auth/realms/school"
+  "keycloakUrl": "http://localhost:8280/auth/realms/school"
 }
