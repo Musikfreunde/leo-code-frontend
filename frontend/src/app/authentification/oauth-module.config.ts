@@ -4,5 +4,5 @@ export const authModuleConfig: OAuthModuleConfig = {
   resourceServer: {
     allowedUrls: [],
     sendAccessToken: true
-  }
+  },
 };

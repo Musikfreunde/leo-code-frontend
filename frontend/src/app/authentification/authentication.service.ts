@@ -24,7 +24,8 @@ export class AuthenticationService {
       clientId: 'beeyond-spa',
       responseType: 'code',
       scope: 'offline_access',
-      showDebugInformation: true
+      showDebugInformation: true,
+      requireHttps: false
     });
     await this.oAuthService.loadDiscoveryDocumentAndTryLogin({
       customHashFragment: window.location.search
