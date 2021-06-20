@@ -5,7 +5,7 @@
       <input id="exampleId" type="text" name="example" placeholder="Example Id" required class="form-control">
     </div>
     <label>Username:</label>
-    <input type="text" name="username" placeholder="Username" required class="form-control">
+    <input type="text" name="username" [value]="username" placeholder="Username" [disabled]="true" required class="form-control">
     <label>Your Sourcecode: </label>
     <input type="file" class="form-control" name="code" accept=".java" multiple required>
   </form>
