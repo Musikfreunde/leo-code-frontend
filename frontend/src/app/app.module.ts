@@ -37,6 +37,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {AuthenticationService} from './authentification/authentication.service';
 import {ConfigService} from './services/config.service';
+import {OAuthModule} from 'angular-oauth2-oidc';
+import {authModuleConfig} from './authentification/oauth-module.config';
 
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
@@ -87,6 +89,7 @@ const appRoutes: Routes = [
         MatCardModule,
         ReactiveFormsModule,
         FormsModule,
+        OAuthModule.forRoot(authModuleConfig),
         ServiceWorkerModule.register('ngsw-worker.js', {
           enabled: environment.production,
           // Register the ServiceWorker as soon as the app is stable
