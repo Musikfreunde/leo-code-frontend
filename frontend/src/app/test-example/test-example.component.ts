@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpService} from '../services/http.service';
-import {AuthenticationService} from "../authentification/authentication.service";
 
 @Component({
   selector: 'app-test-example',
@@ -11,16 +10,13 @@ import {AuthenticationService} from "../authentification/authentication.service"
 export class TestExampleComponent implements OnInit {
 
   exampleId: number;
-  username = '';
   form: FormData;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private http: HttpService,
-              private authService: AuthenticationService) { }
+              private http: HttpService) { }
 
   ngOnInit(): void {
-    this.username = this.authService.username.getValue();
     this.checkPathParam();
   }
 
