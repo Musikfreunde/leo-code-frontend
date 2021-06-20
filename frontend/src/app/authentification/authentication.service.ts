@@ -21,7 +21,7 @@ export class AuthenticationService {
     this.oAuthService.configure({
       issuer: this.configService.config.keycloakUrl,
       redirectUri: window.location.origin,
-      clientId: 'beeyond-spa',
+      clientId: 'leocode-spa',
       responseType: 'code',
       scope: 'offline_access',
       showDebugInformation: true,
