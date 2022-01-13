@@ -24,6 +24,8 @@
     "@angular/service-worker": "~11.1.0",
     "angular-oauth2-oidc": "^10.0.3",
     "bootstrap": "^4.6.0",
+    "monaco-editor": "^0.24.0",
+    "ngx-monaco-editor": "^12.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

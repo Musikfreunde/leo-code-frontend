@@ -39,6 +39,7 @@ import {AuthenticationService} from './authentification/authentication.service';
 import {ConfigService} from './services/config.service';
 import {OAuthModule} from 'angular-oauth2-oidc';
 import {authModuleConfig} from './authentification/oauth-module.config';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
@@ -89,6 +90,7 @@ const appRoutes: Routes = [
         MatCardModule,
         ReactiveFormsModule,
         FormsModule,
+        MonacoEditorModule.forRoot(),
         OAuthModule.forRoot(authModuleConfig),
         ServiceWorkerModule.register('ngsw-worker.js', {
           enabled: environment.production,

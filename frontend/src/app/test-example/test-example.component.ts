@@ -10,6 +10,12 @@ import {AuthenticationService} from "../authentification/authentication.service"
 })
 export class TestExampleComponent implements OnInit {
 
+
+  editorOptions = {theme: 'vs-dark', language: 'java'};
+  code = 'public static void main (String[] args)\n' +
+    '       {\n' + +
+    '             System.out.println("Hello World!");\n' +
+    '       }';
   exampleId: number;
   username = '';
   form: FormData;
