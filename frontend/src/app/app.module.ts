@@ -90,7 +90,7 @@ const appRoutes: Routes = [
         MatCardModule,
         ReactiveFormsModule,
         FormsModule,
-        MonacoEditorModule.forRoot(),
+        MonacoEditorModule,
         OAuthModule.forRoot(authModuleConfig),
         ServiceWorkerModule.register('ngsw-worker.js', {
           enabled: environment.production,
