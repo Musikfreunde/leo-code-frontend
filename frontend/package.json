@@ -13,7 +13,7 @@
   "dependencies": {
     "@angular/animations": "~11.1.0",
     "@angular/cdk": "^11.1.0",
-    "@angular/common": "~11.1.0",
+    "@angular/common": "~11.1.2",
     "@angular/compiler": "~11.1.0",
     "@angular/core": "~11.1.0",
     "@angular/forms": "~11.1.0",
@@ -25,10 +25,10 @@
     "angular-oauth2-oidc": "^10.0.3",
     "bootstrap": "^4.6.0",
     "monaco-editor": "^0.24.0",
-    "ngx-monaco-editor": "^12.0.0",
-    "rxjs": "~6.6.0",
+    "ngx-monaco-editor": "^9.0.0",
+    "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1101.1",

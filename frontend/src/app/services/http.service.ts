@@ -9,11 +9,7 @@ import {Submission} from '../model/submission.model';
 })
 export class HttpService {
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Access-Control-Allow-Origin':  '*',
-    })
-  };
+
 
   BASE_URL = 'http://http://vm147.htl-leonding.ac.at:8181/';
 
@@ -21,19 +17,19 @@ export class HttpService {
               private _zone: NgZone) { }
 
   getExampleList(): Observable<Example[]> {
-    return this.http.get<Example[]>(this.BASE_URL + 'example/list', this.httpOptions);
+    return this.http.get<Example[]>(this.BASE_URL + 'example/list');
   }
 
   getExampleById(id: number): Observable<Example>{
-    return this.http.get<Example>(this.BASE_URL  + 'example/' + id, this.httpOptions);
+    return this.http.get<Example>(this.BASE_URL  + 'example/' + id);
   }
 
   createExample(form: HTMLFormElement): Observable<Example>{
-    return this.http.post<Example>(this.BASE_URL + 'example', new FormData(form), this.httpOptions);
+    return this.http.post<Example>(this.BASE_URL + 'example', new FormData(form));
   }
 
   testExample(form: FormData): Observable<any>{
-    return this.http.post<any>(this.BASE_URL + 'submission', form, this.httpOptions);
+    return this.http.post<any>(this.BASE_URL + 'submission', form);
   }
 
   getSubmissionStatusSse(id: number): Observable<MessageEvent> {
@@ -54,6 +50,6 @@ export class HttpService {
   }
 
   getFinishedSubmissions(username: string): Observable<Submission[]> {
-    return this.http.get<Submission[]>(this.BASE_URL + 'submission/history/' + username, this.httpOptions);
+    return this.http.get<Submission[]>(this.BASE_URL + 'submission/history/' + username);
   }
 }
