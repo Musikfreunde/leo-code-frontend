@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpService} from '../services/http.service';
-import {AuthenticationService} from "../authentification/authentication.service";
+import {AuthenticationService} from '../authentification/authentication.service';
 
 @Component({
   selector: 'app-test-example',
@@ -11,10 +11,21 @@ import {AuthenticationService} from "../authentification/authentication.service"
 export class TestExampleComponent implements OnInit {
 
 
-  editorOptions = {theme: 'vs-dark', language: 'java'};
+  editorOptions = {
+    language: 'java',
+    colors: {
+      'editor.foreground': '#000000',
+      'editor.background': '#FFFFFF',
+      'editorCursor.foreground': 'red',
+      'editor.lineHighlightBackground': '#1600FF21',
+      'editorLineNumber.foreground': '#008800',
+      'editor.selectionBackground': '#88000030',
+      'editor.inactiveSelectionBackground': '#88000015'
+    }
+  };
   code = 'public static void main (String[] args)\n' +
     '{\n' +
-    '   System.out.println("Hello World!");\n' +
+    '   System.out.println("Write your Code here.");\n' +
     '}';
   exampleId: number;
   username = '';
