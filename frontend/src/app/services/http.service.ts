@@ -11,7 +11,7 @@ export class HttpService {
 
 
 
-  BASE_URL = 'http://http://vm147.htl-leonding.ac.at:8181/';
+  BASE_URL = 'http://vm147.htl-leonding.ac.at:8181/';
 
   constructor(private http: HttpClient,
               private _zone: NgZone) { }
