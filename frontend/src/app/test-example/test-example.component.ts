@@ -55,6 +55,9 @@ export class TestExampleComponent implements OnInit {
     if (this.checkPathParam()) {
       this.form.set('example', String(this.exampleId));
     }
+    var file = new File([this.code],'testFile.java', {type: "text/plain",})
+    this.form.set('code', file);
+    console.log(this.form)
     this.http.testExample(this.form).subscribe(value => {
       this.router.navigate(['submission-status', value]);
     });
