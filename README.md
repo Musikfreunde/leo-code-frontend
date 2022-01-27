@@ -6,7 +6,7 @@ This is a HTL Leonding Project.
 
 [LeoCode documentation](https://github.com/htl-leonding-project/leo-code)
 
-### External Links from Donnabauer:
+### External Links from DonnabauerC:
 
 [LeoCode Donnabauer](https://github.com/donnabauerc/LeoCode)
 
