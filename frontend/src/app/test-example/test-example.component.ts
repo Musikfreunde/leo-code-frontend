@@ -23,10 +23,10 @@ export class TestExampleComponent implements OnInit {
       'editor.inactiveSelectionBackground': '#88000015'
     }
   };
-  code = 'public static void main (String[] args)\n' +
+  code = 'public class HelloWorld {\n'+'public static void main (String[] args)\n' +
     '{\n' +
     '   System.out.println("Write your Code here.");\n' +
-    '}';
+    '}\n'+ '}';
   exampleId: number;
   username = '';
   form: FormData;
@@ -55,7 +55,7 @@ export class TestExampleComponent implements OnInit {
     if (this.checkPathParam()) {
       this.form.set('example', String(this.exampleId));
     }
-    var file = new File([this.code],'testFile.java', {type: "text/plain",})
+    var file = new File([this.code],'HelloWorld.java', {type: "text/plain",})
     this.form.set('code', file);
     console.log(this.form);
     console.log(this.form.get('code'));
