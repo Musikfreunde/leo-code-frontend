@@ -57,6 +57,7 @@ export class TestExampleComponent implements OnInit {
     }
     var file = new File([this.code],'HelloWorld.java', {type: "text/plain",})
     this.form.set('code', file);
+    this.form.set('username', this.username);
     console.log(this.form);
     console.log(this.form.get('code'));
     this.http.testExample(this.form).subscribe(value => {
