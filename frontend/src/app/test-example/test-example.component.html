@@ -10,6 +10,14 @@
     <input type="file" class="form-control" name="code" accept=".java" multiple required>
   </form>
   <br>
-  <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+  <mat-form-field appearance="fill">
+    <mat-select>
+      <mat-select [(ngModel)]="selectedValue" name="language"/>
+      <mat-option *ngFor="let language of languages" [value]="language.language">
+        {{language.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="{selectedValue}"></ngx-monaco-editor>
   <button mat-raised-button color="primary" (click)="sendSubmission()">Test Your Code</button>
 </div>

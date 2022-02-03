@@ -3,6 +3,16 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {HttpService} from '../services/http.service';
 import {AuthenticationService} from '../authentification/authentication.service';
 
+
+class Language{
+  viewValue: string;
+  language: string;
+  constructor(viewValue: string, language: string) {
+    this.viewValue = viewValue;
+    this.language = language;
+  }
+}
+
 @Component({
   selector: 'app-test-example',
   templateUrl: './test-example.component.html',
@@ -10,9 +20,10 @@ import {AuthenticationService} from '../authentification/authentication.service'
 })
 export class TestExampleComponent implements OnInit {
 
+  selectedValue = 'java';
 
   editorOptions = {
-    language: 'java',
+    language: this.selectedValue,
     colors: {
       'editor.foreground': '#000000',
       'editor.background': '#FFFFFF',
@@ -23,13 +34,39 @@ export class TestExampleComponent implements OnInit {
       'editor.inactiveSelectionBackground': '#88000015'
     }
   };
-  code = 'public class HelloWorld {\n'+'public static void main (String[] args)\n' +
+  codeJava = 'public class HelloWorld \n' +
     '{\n' +
-    '   System.out.println("Write your Code here.");\n' +
-    '}\n'+ '}';
+    ' \n' +
+    '       public static void main (String[] args)\n' +
+    '       {\n' +
+    '             // Ausgabe Hello World!\n' +
+    '             System.out.println("Hello World!");\n' +
+    '       }\n' +
+    '}';
+
+  codeCsharp = 'using System;\n' +
+    '\t\t\t\t\t\n' +
+    'public class Program\n' +
+    '{\n' +
+    '\tpublic static void Main()\n' +
+    '\t{\n' +
+    '\t\tConsole.WriteLine("Hello World");\n' +
+    '\t}\n' +
+    '}';
+
+  codeKotlin = 'fun main() {\n' +
+    '    println("Hello, World!")\n' +
+    '}';
+
   exampleId: number;
   username = '';
   form: FormData;
+  languages: Language[] = [
+    new Language(this.codeCsharp, 'csharp'),
+    new Language(this.codeJava, 'java'),
+    new Language(this.codeKotlin, 'kotlin')
+
+  ];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -55,7 +92,7 @@ export class TestExampleComponent implements OnInit {
     if (this.checkPathParam()) {
       this.form.set('example', String(this.exampleId));
     }
-    var file = new File([this.code],'HelloWorld.java', {type: "text/plain",})
+    var file = new File([this.codeJava],'HelloWorld.java', {type: "text/plain",})
     this.form.set('code', file);
     this.form.set('username', this.username);
     console.log(this.form);
