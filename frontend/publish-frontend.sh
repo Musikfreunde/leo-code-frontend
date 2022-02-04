@@ -3,5 +3,5 @@
 set -ex
 
 ng build --prod
-docker build -t zbenii/leofrontend:latest .
-docker image push zbenii/leofrontend:latest
+docker build -t ghcr.io/musikfreunde/leocode-frontend:latest .
+docker image push ghcr.io/musikfreunde/leocode-frontend:latest
