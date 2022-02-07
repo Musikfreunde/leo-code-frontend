@@ -2,4 +2,4 @@
 <mat-spinner *ngIf="spinnerIsVisible" style="margin:0 auto;"></mat-spinner>
 <button mat-raised-button color="primary"
         style="bottom: 10px;margin-left: 10px;position: absolute;"
-        (click)="router.navigate(['list-example'])">Back</button>
+        (click)="(this.authService.roles.getValue()[0] === 'teacher') ? (router.navigate(['list-example/1'] )) : (router.navigate(['list-example/0']))">Back</button>

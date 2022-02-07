@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../services/http.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AuthenticationService} from '../authentification/authentication.service';
 
 @Component({
   selector: 'app-submission-status',
@@ -15,7 +16,8 @@ export class SubmissionStatusComponent implements OnInit {
 
   constructor(private http: HttpService,
               private route: ActivatedRoute,
-              public router: Router) { }
+              public router: Router,
+              public authService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.submissionId = +this.route.snapshot.paramMap.get('id');
