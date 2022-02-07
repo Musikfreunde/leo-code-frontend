@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div style="height: fit-content" class="container mt-5">
   <form enctype="multipart/form-data" name="testExampleForm">
     <div *ngIf="!checkPathParam()">
       <label>Example Id:</label>
@@ -12,12 +12,12 @@
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Language</mat-label>
-    <mat-select [(ngModel)]="selectedValue" name="food">
-      <mat-option *ngFor="let language of languages" [value]="language.language">
-        {{language.viewValue}}
+    <mat-select (selectionChange)="changeCode($event.value)" [(ngModel)]="selectedValue">
+      <mat-option *ngFor="let language of languages" [value]="language.viewValue">
+        {{language.language}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-<!--  <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="{selectedValue}"></ngx-monaco-editor>-->
+ <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
   <button mat-raised-button color="primary" (click)="sendSubmission()">Test Your Code</button>
 </div>

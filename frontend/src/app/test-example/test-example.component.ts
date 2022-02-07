@@ -7,7 +7,7 @@ import {AuthenticationService} from '../authentification/authentication.service'
 class Language{
   viewValue: string;
   language: string;
-  constructor(viewValue: string, language: string) {
+  constructor( viewValue: string, language: string) {
     this.viewValue = viewValue;
     this.language = language;
   }
@@ -32,8 +32,10 @@ export class TestExampleComponent implements OnInit {
       'editorLineNumber.foreground': '#008800',
       'editor.selectionBackground': '#88000030',
       'editor.inactiveSelectionBackground': '#88000015'
-    }
+    },
+    automaticLayout: true
   };
+
   codeJava = 'public class HelloWorld \n' +
     '{\n' +
     ' \n' +
@@ -57,6 +59,9 @@ export class TestExampleComponent implements OnInit {
   codeKotlin = 'fun main() {\n' +
     '    println("Hello, World!")\n' +
     '}';
+
+
+  code = '';
 
   exampleId: number;
   username = '';
@@ -92,7 +97,7 @@ export class TestExampleComponent implements OnInit {
     if (this.checkPathParam()) {
       this.form.set('example', String(this.exampleId));
     }
-    const file = new File([this.codeJava], 'HelloWorld.java', {type: 'text/plain',});
+    const file = new File([this.code], 'HelloWorld.java', {type: 'text/plain', });
     this.form.set('code', file);
     this.form.set('username', this.username);
     console.log(this.form);
@@ -101,5 +106,7 @@ export class TestExampleComponent implements OnInit {
       this.router.navigate(['submission-status', value]);
     });
   }
-
+  changeCode(value: any): void {
+    this.code = value;
+  }
 }
