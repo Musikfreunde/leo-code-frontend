@@ -9,7 +9,7 @@ import {Submission} from '../model/submission.model';
 })
 export class HttpService {
 
-  BASE_URL = 'backend:8181/';
+  BASE_URL = 'http://backend:8181/';
 
   constructor(private http: HttpClient,
               private _zone: NgZone) { }

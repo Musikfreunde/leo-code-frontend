@@ -1,4 +1,4 @@
 {
-  "backendApiUrl": "backend:8181",
-  "keycloakUrl": "identity-provider:8280/auth/realms/school"
+  "backendApiUrl": "http://backend:8181",
+  "keycloakUrl": "http://identity-provider:8280/auth/realms/school"
 }
