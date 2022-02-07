@@ -11,13 +11,13 @@
   </form>
   <br>
   <mat-form-field appearance="fill">
-    <mat-select>
-      <mat-select [(ngModel)]="selectedValue" name="language"/>
+    <mat-label>Language</mat-label>
+    <mat-select [(ngModel)]="selectedValue" name="food">
       <mat-option *ngFor="let language of languages" [value]="language.language">
         {{language.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="{selectedValue}"></ngx-monaco-editor>
+<!--  <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="{selectedValue}"></ngx-monaco-editor>-->
   <button mat-raised-button color="primary" (click)="sendSubmission()">Test Your Code</button>
 </div>

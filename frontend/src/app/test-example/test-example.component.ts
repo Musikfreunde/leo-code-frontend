@@ -92,7 +92,7 @@ export class TestExampleComponent implements OnInit {
     if (this.checkPathParam()) {
       this.form.set('example', String(this.exampleId));
     }
-    var file = new File([this.codeJava],'HelloWorld.java', {type: "text/plain",})
+    const file = new File([this.codeJava], 'HelloWorld.java', {type: 'text/plain',});
     this.form.set('code', file);
     this.form.set('username', this.username);
     console.log(this.form);
