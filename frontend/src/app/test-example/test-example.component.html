@@ -1,4 +1,4 @@
-<div style="height: fit-content" class="container mt-5">
+<div style="height: 100vh" class="container mt-5">
   <form enctype="multipart/form-data" name="testExampleForm">
     <div *ngIf="!checkPathParam()">
       <label>Example Id:</label>
@@ -7,7 +7,7 @@
     <label>Username:</label>
     <input type="text" name="username" [value]="username" placeholder="Username" [disabled]="true" required class="form-control">
     <label>Your Sourcecode: </label>
-    <input type="file" class="form-control" name="code" accept=".java" multiple required>
+    <input type="file" (change)="uploadFile($event)" class="form-control" name="code" accept=".java" multiple required>
   </form>
   <br>
   <mat-form-field appearance="fill">
@@ -18,6 +18,6 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
- <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+ <ngx-monaco-editor style="height: 120% !important" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
   <button mat-raised-button color="primary" (click)="sendSubmission()">Test Your Code</button>
 </div>

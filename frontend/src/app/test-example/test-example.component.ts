@@ -36,14 +36,12 @@ export class TestExampleComponent implements OnInit {
     automaticLayout: true
   };
 
-  codeJava = 'public class HelloWorld \n' +
-    '{\n' +
-    ' \n' +
-    '       public static void main (String[] args)\n' +
-    '       {\n' +
-    '             // Ausgabe Hello World!\n' +
-    '             System.out.println("Hello World!");\n' +
-    '       }\n' +
+  codeJava = 'public class HelloWorld {\n' +
+    '\n' +
+    '    public static void main(String[] args) {\n' +
+    '        System.out.println("Hello, World");\n' +
+    '    }\n' +
+    '\n' +
     '}';
 
   codeCsharp = 'using System;\n' +
@@ -108,5 +106,11 @@ export class TestExampleComponent implements OnInit {
   }
   changeCode(value: any): void {
     this.code = value;
+  }
+
+  async uploadFile(event: Event): Promise<void> {
+    const target = event.target as HTMLInputElement;
+    const files = target.files as FileList;
+    this.code = await files.item(0).text();
   }
 }
