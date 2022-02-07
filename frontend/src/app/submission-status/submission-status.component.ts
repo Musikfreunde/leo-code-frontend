@@ -25,13 +25,13 @@ export class SubmissionStatusComponent implements OnInit {
   getSubmissionStatus(id: number): void {
     this.http.getSubmissionStatusSse(id).subscribe(messageEvent => {
       this.submissionStatus = messageEvent.data;
+      if (!this.submissionStatus.includes('SUBMITTED')){
+        this.spinnerIsVisible = false;
+      }
     }, error => {
       console.log(error);
     });
 
-    if (this.submissionStatus !== 'SUBMITTED'){
-      this.spinnerIsVisible = false;
-    }
   }
 
 }
