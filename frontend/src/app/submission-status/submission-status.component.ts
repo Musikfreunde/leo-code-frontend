@@ -11,6 +11,7 @@ export class SubmissionStatusComponent implements OnInit {
 
   submissionId: number;
   submissionStatus: string;
+  spinnerIsVisible = true;
 
   constructor(private http: HttpService,
               private route: ActivatedRoute,
@@ -27,6 +28,10 @@ export class SubmissionStatusComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+
+    if (this.submissionStatus !== 'SUBMITTED'){
+      this.spinnerIsVisible = false;
+    }
   }
 
 }

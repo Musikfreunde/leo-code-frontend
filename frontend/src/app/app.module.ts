@@ -40,6 +40,7 @@ import {ConfigService} from './services/config.service';
 import {OAuthModule} from 'angular-oauth2-oidc';
 import {authModuleConfig} from './authentification/oauth-module.config';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
@@ -76,6 +77,7 @@ const appRoutes: Routes = [
         MatToolbarModule,
         MatButtonModule,
         MatSidenavModule,
+        MatProgressSpinnerModule,
         MatIconModule,
         MatListModule,
         RouterModule.forRoot(appRoutes),
