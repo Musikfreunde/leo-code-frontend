@@ -19,11 +19,8 @@ class Language{
   styleUrls: ['./test-example.component.css']
 })
 export class TestExampleComponent implements OnInit {
-
-  selectedValue = 'java';
-
   editorOptions = {
-    language: this.selectedValue,
+    language: '',
     colors: {
       'editor.foreground': '#000000',
       'editor.background': '#FFFFFF',
@@ -109,7 +106,8 @@ export class TestExampleComponent implements OnInit {
       this.code = value;
     }
 
-    this.selectedValue = this.languages.find(l => l.viewValue === value).language;
+    this.editorOptions = {...this.editorOptions, language: this.languages.find(l => l.viewValue === value).language};
+    Object.assign({}, this.editorOptions, {language: this.languages.find(l => l.viewValue === value).language});
   }
 
   async uploadFile(event: Event): Promise<void> {
