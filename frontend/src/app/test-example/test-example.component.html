@@ -12,7 +12,7 @@
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Language</mat-label>
-    <mat-select (selectionChange)="changeCode($event.value)" [(ngModel)]="selectedValue">
+    <mat-select (selectionChange)="changeCode($event.value)">
       <mat-option *ngFor="let language of languages" [value]="language.viewValue">
         {{language.language}}
       </mat-option>

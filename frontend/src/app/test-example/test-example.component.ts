@@ -105,7 +105,11 @@ export class TestExampleComponent implements OnInit {
     });
   }
   changeCode(value: any): void {
-    this.code = value;
+    if (this.code === '' || this.code === this.codeCsharp || this.code === this.codeJava || this.code === this.codeKotlin){
+      this.code = value;
+    }
+
+    this.selectedValue = this.languages.find(l => l.viewValue === value).language;
   }
 
   async uploadFile(event: Event): Promise<void> {
