@@ -6,6 +6,7 @@ import { PortfolioDataSource, PortfolioItem } from './portfolio-datasource';
 import {Submission} from '../model/submission.model';
 import {HttpService} from '../services/http.service';
 import {ActivatedRoute} from '@angular/router';
+import {AuthenticationService} from "../authentification/authentication.service";
 
 @Component({
   selector: 'app-portfolio',
@@ -22,12 +23,13 @@ export class PortfolioComponent implements AfterViewInit, OnInit {
   displayedColumns = ['id', 'status', 'result', 'lastTimeChanged'];
 
   constructor(private http: HttpService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private authService: AuthenticationService) {
   }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<Submission>();
-    this.refreshData(this.route.snapshot.paramMap.get('username'));
+    this.refreshData(this.authService.username.getValue());
   }
 
   ngAfterViewInit(): void {

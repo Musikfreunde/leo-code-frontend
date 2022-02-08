@@ -45,7 +45,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
   {path: 'test-example', component: TestExampleComponent},
-  {path: 'portfolio/:username', component: PortfolioComponent},
+  {path: 'portfolio', component: PortfolioComponent},
   {path: 'list-example/:value', component: ListExampleComponent},
   {path: 'example/:id', component: DetailExampleComponent},
   {path: 'test-example/:id', component: TestExampleComponent},
