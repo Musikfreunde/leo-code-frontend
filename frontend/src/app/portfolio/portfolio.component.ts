@@ -41,4 +41,10 @@ export class PortfolioComponent implements AfterViewInit, OnInit {
   refreshData(username: string): void {
     this.http.getFinishedSubmissions(username).subscribe(value => this.dataSource.data = value, error => console.log(error));
   }
+
+  formatResult(result): string{
+    console.log(result);
+    const resultList = result.split('\n');
+    return resultList[resultList.length - 1];
+  }
 }
