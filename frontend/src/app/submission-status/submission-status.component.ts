@@ -13,7 +13,7 @@ export class SubmissionStatusComponent implements OnInit {
   submissionId: number;
   submissionStatus: string;
   spinnerIsVisible = true;
-  testResult: string;
+  testResult = '';
 
   constructor(private http: HttpService,
               private route: ActivatedRoute,
