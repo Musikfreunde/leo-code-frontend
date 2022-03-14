@@ -54,4 +54,8 @@ export class DetailExampleComponent implements AfterViewInit, OnInit {
       console.log(error);
     });
   }
+
+  createURLForFile(file: File): string {
+    return URL.createObjectURL(file);
+  }
 }
