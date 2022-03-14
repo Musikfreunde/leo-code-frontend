@@ -58,9 +58,14 @@ export class TestExampleComponent implements OnInit {
 
   code = '';
 
+  fileIsUploaded = false;
+
+  uploadedFile: File;
+
   exampleId: number;
   username = '';
   form: FormData;
+
   languages: Language[] = [
     new Language(this.codeCsharp, 'csharp'),
     new Language(this.codeJava, 'java'),
@@ -106,6 +111,7 @@ export class TestExampleComponent implements OnInit {
       this.code = value;
     }
 
+    // Muss gemacht werden, dass Editor die Änderung der Sprache übernimmt
     this.editorOptions = {...this.editorOptions, language: this.languages.find(l => l.viewValue === value).language};
     Object.assign({}, this.editorOptions, {language: this.languages.find(l => l.viewValue === value).language});
   }
@@ -114,5 +120,17 @@ export class TestExampleComponent implements OnInit {
     const target = event.target as HTMLInputElement;
     const files = target.files as FileList;
     this.code = await files.item(0).text();
+    this.uploadedFile = files.item(0);
+    this.fileIsUploaded = true;
+    console.log(this.fileIsUploaded);
+  }
+
+  downloadFile(): void {
+    const file = new File([this.code], this.uploadedFile.name, {type: 'text/plain', });
+    const link = document.createElement('a');
+    link.download = file.name;
+    link.href = URL.createObjectURL(file);
+    link.target = '_blank';
+    link.click();
   }
 }

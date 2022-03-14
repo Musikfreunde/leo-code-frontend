@@ -1,5 +1,5 @@
 export interface LeoCodeFile{
   name: string;
-  filetype: string;
+  fileType: string;
   content: string;
 }

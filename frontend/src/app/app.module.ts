@@ -41,6 +41,7 @@ import {OAuthModule} from 'angular-oauth2-oidc';
 import {authModuleConfig} from './authentification/oauth-module.config';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MarkdownModule } from 'ngx-markdown'
 
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
@@ -81,6 +82,7 @@ const appRoutes: Routes = [
         MatIconModule,
         MatListModule,
         RouterModule.forRoot(appRoutes),
+        MarkdownModule.forRoot(),
         MatTableModule,
         MatPaginatorModule,
         MatSortModule,

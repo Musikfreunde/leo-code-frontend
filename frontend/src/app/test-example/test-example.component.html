@@ -18,6 +18,8 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
- <ngx-monaco-editor style="height: 45% !important" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+  <ngx-monaco-editor style="height: 45% !important" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+
   <button mat-raised-button color="primary" (click)="sendSubmission()">Test Your Code</button>
+  <button style="display: inline; margin-left: 1%" mat-raised-button color="primary" [disabled]="!fileIsUploaded" (click)="downloadFile()"> Download Your File</button>
 </div>
