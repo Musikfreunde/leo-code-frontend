@@ -33,7 +33,7 @@ export class TestExampleComponent implements OnInit {
     automaticLayout: true
   };
 
-  codeJava = 'public class HelloWorld {\n' +
+  codeJava = 'package at.htl.examples;\npublic class HelloWorld {\n' +
     '\n' +
     '    public static void main(String[] args) {\n' +
     '        System.out.println("Hello, World");\n' +
