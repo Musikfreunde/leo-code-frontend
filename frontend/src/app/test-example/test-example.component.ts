@@ -20,7 +20,7 @@ class Language{
 })
 export class TestExampleComponent implements OnInit {
   editorOptions = {
-    language: '',
+    language: 'java',
     colors: {
       'editor.foreground': '#000000',
       'editor.background': '#FFFFFF',
@@ -150,7 +150,7 @@ export class TestExampleComponent implements OnInit {
 
   getDefaultJava(): string{
     const lang = this.languages.find(l => l.language === 'java');
-    this.changeCode(lang.viewValue);
+    this.code = lang.viewValue;
     return lang.language;
   }
 }
