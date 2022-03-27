@@ -77,6 +77,8 @@ export class TestExampleComponent implements OnInit {
 
   ];
 
+  defaultLang: Language;
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private http: HttpService,
@@ -86,12 +88,8 @@ export class TestExampleComponent implements OnInit {
     this.username = this.authService.username.getValue();
     this.checkPathParam();
     this.http.getExampleById(this.exampleId).subscribe(value => {
-      if (value === null) {
-        this.router.navigate(['NotFound']);
-      } else {
         this.markDownFileContent = value.files.find(f => f.fileType === 'INSTRUCTION').content;
         this.exampleDescription = value.description;
-      }
     }, error => {
       console.log(error);
     });
@@ -151,6 +149,7 @@ export class TestExampleComponent implements OnInit {
   getDefaultJava(): string{
     const lang = this.languages.find(l => l.language === 'java');
     this.code = lang.viewValue;
+    this.defaultLang = lang;
     return lang.language;
   }
 }
