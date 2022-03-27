@@ -82,7 +82,10 @@ export class TestExampleComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private http: HttpService,
-              private authService: AuthenticationService) { }
+              private authService: AuthenticationService) {
+    this.defaultLang = this.languages.find(l => l.language === 'java');
+    this.code = this.defaultLang.viewValue;
+  }
 
   ngOnInit(): void {
     this.username = this.authService.username.getValue();
@@ -146,10 +149,4 @@ export class TestExampleComponent implements OnInit {
     link.click();
   }
 
-  getDefaultJava(): string{
-    const lang = this.languages.find(l => l.language === 'java');
-    this.code = lang.viewValue;
-    this.defaultLang = lang;
-    return lang.language;
-  }
 }
