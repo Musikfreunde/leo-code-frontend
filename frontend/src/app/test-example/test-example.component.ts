@@ -148,9 +148,9 @@ export class TestExampleComponent implements OnInit {
     link.click();
   }
 
-  getDefaultJava(): Language{
+  getDefaultJava(): string{
     const lang = this.languages.find(l => l.language === 'java');
     this.changeCode(lang.viewValue);
-    return lang;
+    return lang.language;
   }
 }
