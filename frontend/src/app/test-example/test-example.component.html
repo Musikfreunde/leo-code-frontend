@@ -12,12 +12,27 @@
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Language</mat-label>
-    <mat-select (selectionChange)="changeCode($event.value)">
+    <mat-select (selectionChange)="changeCode($event.value)" [value]="getDefaultJava()">
       <mat-option *ngFor="let language of languages" [value]="language.viewValue">
         {{language.language}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Introduction
+      </mat-panel-title>
+      <mat-panel-description>
+        {{exampleDescription}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <markdown [data]="markDownFileContent" >
+
+    </markdown>
+  </mat-expansion-panel>
+
   <ngx-monaco-editor style="height: 45% !important" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
 
   <button mat-raised-button color="primary" (click)="sendSubmission()">Test Your Code</button>

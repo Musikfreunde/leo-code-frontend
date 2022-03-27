@@ -15,6 +15,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatSortModule} from '@angular/material/sort';
+import { MatExpansionModule } from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -41,7 +42,8 @@ import {OAuthModule} from 'angular-oauth2-oidc';
 import {authModuleConfig} from './authentification/oauth-module.config';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { MarkdownModule } from 'ngx-markdown'
+import { MarkdownModule } from 'ngx-markdown';
+
 
 const appRoutes: Routes = [
   {path: 'create-example', component: CreateExampleComponent},
@@ -73,6 +75,7 @@ const appRoutes: Routes = [
   ],
     imports: [
         BrowserModule,
+        MatExpansionModule,
         BrowserAnimationsModule,
         LayoutModule,
         MatToolbarModule,

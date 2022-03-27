@@ -62,6 +62,10 @@ export class TestExampleComponent implements OnInit {
 
   uploadedFile: File;
 
+  markDownFileContent = '';
+
+  exampleDescription = '';
+
   exampleId: number;
   username = '';
   form: FormData;
@@ -81,6 +85,16 @@ export class TestExampleComponent implements OnInit {
   ngOnInit(): void {
     this.username = this.authService.username.getValue();
     this.checkPathParam();
+    this.http.getExampleById(this.exampleId).subscribe(value => {
+      if (value === null) {
+        this.router.navigate(['NotFound']);
+      } else {
+        this.markDownFileContent = value.files.find(f => f.fileType === 'INSTRUCTION').content;
+        this.exampleDescription = value.description;
+      }
+    }, error => {
+      console.log(error);
+    });
   }
 
   checkPathParam(): boolean {
@@ -132,5 +146,11 @@ export class TestExampleComponent implements OnInit {
     link.href = URL.createObjectURL(file);
     link.target = '_blank';
     link.click();
+  }
+
+  getDefaultJava(): Language{
+    const lang = this.languages.find(l => l.language === 'java');
+    this.changeCode(lang.viewValue);
+    return lang;
   }
 }
